@@ -12,7 +12,7 @@
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
-  --bg:#FFFAFC; --ink:#4A2F3A; --soft:#917581;
+  --bg:#F4F2F3; --ink:#4A2F3A; --soft:#917581;
   --line:#F3BFD0; --hover:#F7CCDA; --blossom:#D9788F; --card:#FBDCE6;
 }
 @media (prefers-color-scheme:dark){
@@ -30,9 +30,13 @@ html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{
   margin:0;min-height:100%;background:var(--bg);color:var(--ink);
   font-family:'DM Sans',system-ui,sans-serif;font-size:1rem;line-height:1.5;
-  display:flex;justify-content:center;
+  display:flex;justify-content:center;padding:0 16px;
 }
-main{width:100%;max-width:420px;padding:88px 24px 56px;text-align:center}
+main{
+  width:100%;max-width:400px;margin:56px 0;align-self:flex-start;
+  padding:44px 28px 64px;text-align:center;
+  background:var(--frame);border-radius:28px;
+}
 .avatar{
   width:128px;height:128px;margin:0 auto 24px;border-radius:50%;
   background:var(--hover);border:1px solid var(--line);color:var(--blossom);
@@ -55,6 +59,9 @@ a.link.primary{
 }
 a.link.primary:hover{background:#BC3E67;border-color:#BC3E67}
 a.link:focus-visible{outline:2px solid var(--blossom);outline-offset:3px}
+:root{--frame:#FFFFFF;--frame-line:#F3DDE5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--frame:#2C1D26;--frame-line:#4A3341}}
+:root[data-theme="dark"]{--frame:#2C1D26;--frame-line:#4A3341}
 @media (prefers-reduced-motion:reduce){a.link{transition:none}}
 </style>
 </head>
